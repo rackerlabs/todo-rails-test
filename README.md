@@ -15,7 +15,7 @@ This application was built with the following specifications:
 2. Complete "Basic Requirements"
 3. If time remains, proceed to complete "Bonus Requirements"
 
-### Basic Requirements
+## Basic Requirements
 Update the existing code to provide the following functionality:
 
 1. Add ability to set a due date on a task
@@ -25,33 +25,33 @@ Update the existing code to provide the following functionality:
 These updates should be **_all your own work_**, and it does not need to be complicated.  Fewer tested features are preferred over many buggy features.
 
 
-### Bonus Requirements
+## Bonus Requirements
 If you complete the Basic Requirements, you may attempt the following Bonus Requirements.  These are **completely optional**, but they will provide us with a better understanding of your abilities should you attempt to complete them.
 
 **NOTE:** If you attempt these Bonus Requirements, please complete them in the order shown.
 
 
-#### Level 1 Bonus Requirement
+### Level 1 Bonus Requirement
 _Please make sure you've completed all Basic Requirements._
 
 * Add functionality to retrieve all Tasks for a given List in JSON format
 
 
-#### Level 2 Bonus Requirement
+### Level 2 Bonus Requirement
 _Please make sure you've completed the Level 1 Bonus Requirement._
 
 * Modify the application so that all functionality can be performed through RESTful JSON endpoints.
 
-##### Reference
+#### Reference
 * [REST](http://en.wikipedia.org/wiki/Representational_state_transfer)
 
 
-#### Level 3 Bonus Requirement
+### Level 3 Bonus Requirement
 _Please make sure you've completed the Level 2 Bonus Requirement._
 
 * Modify the application so that all UI functionality is performed via a javascript MVC framework of your choosing.  You may choose **any** framework you are **comfortable** with.
 	
-##### Reference
+#### Reference
 * Popular Javascript frameworks:
 	* [AngularJS](http://angularjs.org/)
 	* [EmberJS](http://emberjs.com/)
@@ -59,13 +59,13 @@ _Please make sure you've completed the Level 2 Bonus Requirement._
 	* [BackboneJS](http://backbonejs.org/)
 
 
-#### Level 4 Bonus Requirement
+### Level 4 Bonus Requirement
 _Please make sure you've completed the Level 3 Bonus Requirement._
 
 * Update the UI to make it more appealing.
-	* Bootstrap 3.1.1 is available and ready do load.
+	* Bootstrap 3.1.1 is available and ready to load.
 
-##### Reference
+#### Reference
 * [Bootstrap CSS](http://getbootstrap.com/css/)
 * [Bootstrap Components](http://getbootstrap.com/components/)
 
