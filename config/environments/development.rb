@@ -29,4 +29,8 @@ TodoRailsTest::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   config.active_record.auto_explain_threshold_in_seconds = 0.5
 
+  config.assets.compress = false
+  config.assets.debug = true
+  config.assets.compile = true
+  config.assets.serve_static_assets = true
 end
