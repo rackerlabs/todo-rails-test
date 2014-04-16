@@ -9,3 +9,7 @@ group :test, :development do
   gem 'guard-rails'
   gem 'guard-rspec'
 end
+
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
