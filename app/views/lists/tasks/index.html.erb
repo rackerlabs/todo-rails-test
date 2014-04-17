@@ -7,11 +7,13 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
   <% @tasks.each do |task| %>
     <tr>
       <td><%= task.name %></td>
       <td><%= task.complete %></td>
+      <td><%= task.due_date %></td>
       <td><%= link_to 'Show', list_task_path(@list, task) %></td>
       <td><%= link_to 'Edit', edit_list_task_path(@list, task) %></td>
       <td><%= link_to 'Destroy', list_task_path(@list, task), method: :delete, confirm: 'Are you sure?' %></td>
