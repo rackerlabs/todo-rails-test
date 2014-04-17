@@ -1,19 +1,22 @@
 $(document).ready(function() {
-	$(".hidden_button").hide();
+
+
 	$(".shown_button").click(function(){
 	  $(this).next().show();
 	  $(this).remove();
 	});
 
-	// $("#submit_button").hide();
-	$(".check_box").click(function(){
-		$("#submit_button").click().delay(0.001);
+	// hide submit button it's ugly
+	$("#submit_button").hide();
+
+	//when update or add buttons are clicked the invisibile submit button is clicked
+	$(".btn").click(function(){
+		$("#submit_button").click();
 	});
 
+	//last item field is detached and prepended
 	$itemField = $(".item_field").last().detach();
-	$(".append").prepend($itemField);
+	$(".prepend").prepend($itemField);
 	$($itemField).children().first().remove();
 	$($itemField).attr('id', 'add_new_item_field');
-	$(".check_box").children().addClass("check_input");
-
 });

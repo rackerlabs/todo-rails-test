@@ -16,20 +16,30 @@
 		    </div>
 		  <% end %>
 
-		  <div class="row append"><button class="small_button" id="add_new_item_botton">Add New Item</button></div>
+			<div class="row">
+				<div class="col-md-7">New Task Name</div>
+				<div class="col-md-5 task_date_label">New Task Due Date </div>
+			</div>
+		  <div class="row prepend"><button type="button" class="btn btn-default">Add New Item</button></div>
 
 
 			<div class="item_form_list">
+				<div class="row">
+					<div class="col-md-1">Done?</div>
+					<div class="col-md-7">Task Name</div>
+					<div class="col-md-4">Due Date</div>
+				</div>
 		    <%= f.fields_for :tasks do |t| %>
 			    <div class="row item_field">
 			    	<div class="col-md-1 check_box"><%= t.check_box :complete %></div>
-			      <div class="col-md-4 name_field"><%= t.text_field :name %></div>
-			      <div class="col-md-7 date_field"><%= t.date_select :due_date %></div>
+			      <div class="col-md-7 name_field"><%= t.text_field :name %></div>
+			      <div class="col-md-4 date_field"><%= t.text_field :due_date %></div>
 			    </div>
 		    <% end %>
 			</div>
 		  <div class="row">
-		    <%= f.submit %>
+		    <button type="button" class="btn btn-default">Update List and Sort by Date</button>
+		    <div id="submit_button"><%= f.submit %></div>
 		  </div>
 		  
 		<% end %>
