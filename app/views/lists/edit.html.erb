@@ -1,6 +1,36 @@
-<h1><%= @list.title %></h1>
+<div class="container">
 
-<%= render 'form' %>
+	<div class="row"><h3><%= link_to 'Back to Lists', lists_path %></h3></div>
+	<div class="row"><h1><%= @list.title %></h1></div>
 
-<%= link_to 'Show', @list %> |
-<%= link_to 'Back', lists_path %>
+	<div class="row">
+		<%= form_for(@list) do |f| %>
+		  <% if @list.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
+		      <ul>
+		        <% @list.errors.full_messages.each do |msg| %>
+		          <li><%= msg %></li>
+		        <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+
+		  <div class="row">
+		    <%= f.fields_for :tasks do |t| %>
+		    	<div class="col-md-1"><%= t.check_box :complete %></div>
+		      <div class="col-md-4"><%= t.text_field :name %></div>
+		      <div class="col-md-7"><%= t.date_select :due_date %></div>
+		    <% end %>
+		  </div>
+		  <div class="row">
+		    <%= f.submit %>
+		  </div>
+		  
+		<% end %>
+
+	
+	</div><!-- end row -->
+
+</div>
+<!-- end container -->
