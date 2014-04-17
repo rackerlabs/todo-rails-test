@@ -2,13 +2,14 @@
   <div class="row"><h1>Lists</h1></div><!-- end row -->
   <div class="row"><button type="button" class="btn btn-default btn-lg"><%= link_to 'Create New List', new_list_path %></button></div>
 
-  <div class="row">
-    <% @lists.each do |list| %>
-
-        <div class="col-md-8"><%= link_to list.title, edit_list_path(list) %></div>
-        <div class="col-md-4"><%= link_to 'Delete', list, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-    <% end %>
-  </div><!-- end row -->
+  <% @lists.each do |list| %>
+    <div class="row">
+      <div class="col-md-4"><%= link_to list.title, edit_list_path(list) %></div>
+      <div class="col-md-8 shown_button"><button type="button" class="btn btn-default glyphicon glyphicon-trash"></button></div>
+      <div class="col-md-8 hidden_button"><button type="button" class="btn btn-default"><%= link_to 'Are You Sure?', list, method: :delete %></button></div>
+    </div><!-- end row -->
+  <% end %>
+  
 
 
 </div><!-- end container -->

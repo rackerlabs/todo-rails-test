@@ -1,6 +1,9 @@
 $(document).ready(function() {
 
+	//hide delete link
+	$(".hidden_button").hide();
 
+	//hide trash icon and reveal delete link
 	$(".shown_button").click(function(){
 	  $(this).next().show();
 	  $(this).remove();
