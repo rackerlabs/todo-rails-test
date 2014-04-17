@@ -17,6 +17,8 @@ class ListsController < ApplicationController
   # GET /lists/1/edit
   def edit
     @list = List.find(params[:id])
+    @tasks = @list.tasks.all
+    @list.tasks.build
   end
 
   # POST /lists
@@ -45,7 +47,7 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
 
     respond_to do |format|
-      if @list.update(list_params)
+      if @list.update_attributes(params[:list])
 
         format.html { redirect_to @list, notice: 'List was successfully updated.' }
         format.json { head :no_content }

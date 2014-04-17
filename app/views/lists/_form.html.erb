@@ -14,7 +14,19 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
+  <div>
+    <%= f.fields_for :tasks do |t| %>
+      <%= t.text_field :name %>
+    <% end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
+  </div>
+  <div>
+    <ul>
+      <% @tasks.each do |t| %>
+        <li><%= t.name %></li>
+      <% end %>
+    </ul>
   </div>
 <% end %>
