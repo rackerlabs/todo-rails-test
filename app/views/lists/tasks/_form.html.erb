@@ -18,6 +18,10 @@
     <%= f.label :complete, "Complete?" %><br />
     <%= f.check_box :complete %>
   </div>
+  <div>
+    <%= f.label :due_date, "Due Date" %>
+    <%= f.date_select :due_date %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
