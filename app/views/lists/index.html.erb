@@ -1,23 +1,14 @@
-<h1>Lists</h1>
+<div class="container">
+  <div class="row"><h1>Lists</h1></div><!-- end row -->
+  <div class="row"><button type="button" class="btn btn-default btn-lg"><%= link_to 'Create New List', new_list_path %></button></div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <div class="row">
+    <% @lists.each do |list| %>
 
-<% @lists.each do |list| %>
-  <tr>
-    <td><%= list.title %></td>
-    <td><%= link_to 'Show', list %></td>
-    <td><%= link_to 'Edit', edit_list_path(list) %></td>
-    <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+        <div class="col-md-8"><%= link_to list.title, edit_list_path(list) %></div>
+        <div class="col-md-4"><%= link_to 'Delete', list, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    <% end %>
+  </div><!-- end row -->
 
-<br />
 
-<%= link_to 'New List', new_list_path %>
+</div><!-- end container -->

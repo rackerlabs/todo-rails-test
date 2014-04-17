@@ -14,3 +14,6 @@
  *= require bootstrap_and_overrides
  */
 
+body {
+	background-color:blue;
+}
