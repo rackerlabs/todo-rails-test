@@ -48,3 +48,21 @@
 	-webkit-transition:none!important;
 	-moz-transition:none!important;
 }
+
+.list_index {
+	margin-top:5px;
+	margin-bottom:5px;
+	border-top-style:dotted;
+	border-top-color:gray;
+	padding-top:10px;
+}
+
+.bottom_border {
+	border-top-style:dotted;
+	border-top-color:gray;
+}
+
+.list_of_lists {
+	width:600px;
+	font-size:24px;
+}
