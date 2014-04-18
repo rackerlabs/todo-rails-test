@@ -48,3 +48,8 @@ master_sword.list_id = 1
 master_sword.complete = false
 master_sword.due_date = "2014-06-03"
 master_sword.save!
+
+start_over = Task.new
+start_over.name = "Start the whole thing all over again"
+start_over.list_id = 1
+start_over.complete = false

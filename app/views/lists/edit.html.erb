@@ -1,7 +1,7 @@
 <div class="container">
 
-	<div class="row"><h3><%= link_to 'Back to Lists', lists_path %></h3></div>
-	<div class="row"><h1><%= @list.title %></h1></div>
+	<div class="row list_titles"><h3><%= link_to 'Back to Lists', lists_path %></h3></div>
+	<div class="row list_titles" id="list_title"><h1><%= @list.title %></h1></div>
 
 	<div class="row">
 		<%= form_for(@list) do |f| %>
@@ -16,29 +16,28 @@
 		    </div>
 		  <% end %>
 
-			<div class="row">
-				<div class="col-md-7">New Task Name</div>
-				<div class="col-md-5 task_date_label">New Task Due Date </div>
+			<div class="row content">
+				<div class="col-md-4">Task Name</div>
+				<div class="col-md-8 task_date_label">Due Date </div>
 			</div>
-		  <div class="row prepend"><button type="button" class="btn btn-default add_and_update_buttons">Add New Item To List</button></div>
+		  <div class="row prepend"><!-- <button type="button" class="btn btn-default add_and_update_buttons click glyphicon glyphicon-plus"></button> --></div>
 
 
 			<div class="item_form_list">
-				<div class="row">
+				<div class="row content label_headers">
 					<div class="col-md-1">Done?</div>
 					<div class="col-md-7">Task Name</div>
-					<div class="col-md-4">Due Date</div>
+					<div class="col-md-4 click" id="sort_by_date">Due Date<div class="glyphicon glyphicon-chevron-left"></div></div>
 				</div>
 		    <%= f.fields_for :tasks do |t| %>
-			    <div class="row item_field">
-			    	<div class="col-md-1 check_box"><%= t.check_box :complete %></div>
+			    <div class="row content item_field">
+			    	<div class="col-md-1 check_box click"><%= t.check_box :complete %></div>
 			      <div class="col-md-7 name_field"><%= t.text_field :name %></div>
 			      <div class="col-md-4 date_field"><%= t.text_field :due_date, placeholder: "YYYY-MM-DD" %></div>
 			    </div>
 		    <% end %>
 			</div>
 		  <div class="row">
-		    <button type="button" class="btn btn-default add_and_update_buttons">Update List and Sort by Date</button>
 		    <%= f.submit :id => 'submit_button' %>
 		  </div>
 		  

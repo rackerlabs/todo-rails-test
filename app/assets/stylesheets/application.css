@@ -24,7 +24,7 @@
 }
 
 .name_field input {
-	width:600px;
+	width:300px;
 }
 
 #create_new_list_button {
@@ -65,4 +65,33 @@
 .list_of_lists {
 	width:600px;
 	font-size:24px;
+}
+
+.list_titles {
+	margin-left:-50px!important;
+}
+
+#list_title {
+	margin-bottom:20px;
+}
+
+.list_index a {
+	margin-left:-15px!important;
+}
+
+.content {
+	font-size:20px;
+}
+
+.label_headers {
+	margin-bottom:10px;
+}
+
+#sort_by_date {
+	color:#0076C2;
+}
+
+#sort_by_date:hover {
+	color:#483D8B;
+	text-decoration: underline;
 }

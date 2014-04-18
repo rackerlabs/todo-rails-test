@@ -3,7 +3,7 @@
 <%= form_for(@list) do |f| %>
 	<%= f.label :title, "New List Title" %>
 	<%= f.text_field :title %>
-	<%= f.submit %>
+	<div class="hidden_button"><%= f.submit %></div>
 <% end %>
 
 
