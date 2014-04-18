@@ -10,7 +10,7 @@ $(document).ready(function() {
 	$($itemField).children().last().attr('class', 'col-md-4');
 	$($itemField).children().last().attr('id', 'new_due_date');
 	$($itemField).attr('id', 'add_new_item_field');
-	$($itemField).append("<div class='col-md-1'><button type='button' class='btn btn-default click glyphicon glyphicon-plus'></button></div>")
+	$($itemField).append("<div class='col-md-1 add_task_label'><button type='button' class='btn btn-default click'>Add Task</button></div>")
 
 	//hide delete link
 	$(".hidden_button").hide();

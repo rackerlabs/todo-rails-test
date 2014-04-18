@@ -16,7 +16,7 @@ mike.save!
 
 triforce = Task.new
 triforce.name = "Obtain the Triforce"
-triforce.complete = false
+triforce.complete = true
 triforce.list_id = 1
 triforce.due_date = "2014-05-19"
 triforce.save!
@@ -53,3 +53,5 @@ start_over = Task.new
 start_over.name = "Start the whole thing all over again"
 start_over.list_id = 1
 start_over.complete = false
+start_over.due_date = "2014-07-09"
+start_over.save!

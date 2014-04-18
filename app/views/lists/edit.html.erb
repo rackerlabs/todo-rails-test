@@ -17,7 +17,7 @@
 		  <% end %>
 
 			<div class="row content">
-				<div class="col-md-4">Task Name</div>
+				<div class="col-md-4 task_name_label">Task Name</div>
 				<div class="col-md-8 task_date_label">Due Date </div>
 			</div>
 		  <div class="row prepend"><!-- <button type="button" class="btn btn-default add_and_update_buttons click glyphicon glyphicon-plus"></button> --></div>
@@ -27,7 +27,7 @@
 				<div class="row content label_headers">
 					<div class="col-md-1">Done?</div>
 					<div class="col-md-7">Task Name</div>
-					<div class="col-md-4 click" id="sort_by_date">Due Date<div class="glyphicon glyphicon-chevron-left"></div></div>
+					<div class="col-md-4 click" id="sort_by_date">Due Date</div>
 				</div>
 		    <%= f.fields_for :tasks do |t| %>
 			    <div class="row content item_field">

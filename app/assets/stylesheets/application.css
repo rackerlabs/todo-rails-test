@@ -20,7 +20,11 @@
 
 .task_date_label {
 	width:200px;
-	margin-left:25px;
+	margin-left:12px;
+}
+
+.add_task_label {
+	margin-left:-25px;
 }
 
 .name_field input {
@@ -94,4 +98,5 @@
 #sort_by_date:hover {
 	color:#483D8B;
 	text-decoration: underline;
+	cursor:pointer;
 }
