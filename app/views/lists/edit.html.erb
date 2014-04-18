@@ -20,7 +20,7 @@
 				<div class="col-md-7">New Task Name</div>
 				<div class="col-md-5 task_date_label">New Task Due Date </div>
 			</div>
-		  <div class="row prepend"><button type="button" class="btn btn-default">Add New Item</button></div>
+		  <div class="row prepend"><button type="button" class="btn btn-default add_and_update_buttons">Add New Item To List</button></div>
 
 
 			<div class="item_form_list">
@@ -33,12 +33,12 @@
 			    <div class="row item_field">
 			    	<div class="col-md-1 check_box"><%= t.check_box :complete %></div>
 			      <div class="col-md-7 name_field"><%= t.text_field :name %></div>
-			      <div class="col-md-4 date_field"><%= t.text_field :due_date %></div>
+			      <div class="col-md-4 date_field"><%= t.text_field :due_date, placeholder: "YYYY-MM-DD" %></div>
 			    </div>
 		    <% end %>
 			</div>
 		  <div class="row">
-		    <button type="button" class="btn btn-default">Update List and Sort by Date</button>
+		    <button type="button" class="btn btn-default add_and_update_buttons">Update List and Sort by Date</button>
 		    <%= f.submit :id => 'submit_button' %>
 		  </div>
 		  
