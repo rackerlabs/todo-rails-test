@@ -15,6 +15,10 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :due_date %><br />
+    <%= f.date_select :due_date %>
+  </div>
+  <div class="field">
     <%= f.label :complete, "Complete?" %><br />
     <%= f.check_box :complete %>
   </div>
