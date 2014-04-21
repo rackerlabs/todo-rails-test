@@ -6,7 +6,7 @@ describe Lists::TasksController do
 			list = List.create(:title => "some title")
 			task = list.tasks.create(:name => "some task")
 
-			get :index, list_id => list.list_id
+			get :index, :list_id => list.id
 
 			assigns(:tasks).should eq([task])
 		end

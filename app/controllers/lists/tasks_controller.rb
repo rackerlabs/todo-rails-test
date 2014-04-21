@@ -1,11 +1,12 @@
 class Lists::TasksController < ApplicationController
+  helper_method :sort_column, :sort_direction
   before_filter do
     @list = List.find(params[:list_id])
   end
 
   # GET /lists/tasks
   def index
-    @tasks = @list.tasks.all
+    @tasks = @list.tasks.order(sort_column + " " + sort_direction)
   end
 
   # GET /lists/tasks/1
@@ -52,5 +53,15 @@ class Lists::TasksController < ApplicationController
     @task.destroy
 
     redirect_to list_tasks_path(@list)
+  end
+
+  private
+
+  def sort_column
+    params[:sort] || "due_date"
+  end
+
+  def sort_direction
+    params[:direction] || "asc"
   end
 end
