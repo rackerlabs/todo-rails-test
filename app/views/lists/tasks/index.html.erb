@@ -11,7 +11,7 @@
   <% @tasks.each do |task| %>
     <tr>
       <td><%= task.name %></td>
-      <td><%= task.due_date %></td>
+      <td><%= task.due_date.try(:strftime, '%B %d, %Y') %></td>
       <td><%= task.complete %></td>
       <td><%= link_to 'Show', list_task_path(@list, task) %></td>
       <td><%= link_to 'Edit', edit_list_task_path(@list, task) %></td>
