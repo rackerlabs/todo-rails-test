@@ -1,4 +1,4 @@
-A live demo can be viewed at sundip-to-do-list.herokuapp.com
+A live demo can be viewed at http://sundip-to-do-list.herokuapp.com
 
 #Rackspace Software Developer Ruby on Rails Take Home Test
 
