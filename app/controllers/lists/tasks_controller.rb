@@ -30,7 +30,7 @@ class Lists::TasksController < ApplicationController
     @task.list = @list
 
     if @task.save
-      redirect_to list_task_path(@list, @task), notice: 'Task was successfully created.'
+      redirect_to list_tasks_path(@list, @task), notice: 'Task was successfully created.'
     else
       render action: "new"
     end
@@ -41,7 +41,7 @@ class Lists::TasksController < ApplicationController
     @task = Task.find(params[:id])
 
     if @task.update_attributes(params[:task])
-      redirect_to list_task_path(@list, @task), notice: 'Task was successfully updated.'
+      redirect_to list_tasks_path(@list, @task), notice: 'Task was successfully updated.'
     else
       render action: "edit"
     end
@@ -52,7 +52,7 @@ class Lists::TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.destroy
 
-    redirect_to list_tasks_path(@list)
+    redirect_to list_tasks_path(@list), alert: 'Task was successfully destroyed.'
   end
 
   private

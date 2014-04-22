@@ -10,7 +10,7 @@
  *
  *= require bootstrap.min
  *= require bootstrap-theme.min
- *= require jquery.ui.all
+ *= require jquery.ui.datepicker
  *= require_self
  */
 

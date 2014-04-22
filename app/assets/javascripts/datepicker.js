@@ -1,3 +1,3 @@
 $(function(){
-	$('#task_due_date').datepicker({dateFormate: 'yy-mm-dd'});
+	$('#task_due_date').datepicker({dateFormat: 'yy-mm-dd'});
 });

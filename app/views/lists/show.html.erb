@@ -1,11 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="well well-sm">
 
-<p>
-  <b>Title:</b>
-  <%= @list.title %>
-</p>
+		<p id="notice"><%= notice %></p>
 
-<%= link_to 'Tasks', list_tasks_path(@list) %> |
+		<p>
+		  <b>Title:</b>
+		  <%= @list.title %>
+		</p>
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+		<%= link_to 'Add Tasks', list_tasks_path(@list) %> |
+
+		<%= link_to 'Edit', edit_list_path(@list) %> |
+		<%= link_to 'Back', lists_path %>
+
+        </div>
+      </div>
+	</div>
+</div>

@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  respond_to :json, :html
+  respond_to :html, :json
 
   # GET /lists
   def index
@@ -26,8 +26,8 @@ class ListsController < ApplicationController
     @list = List.new(params[:list])
 
     if @list.save
-      flash[:notice] = "List was successfully created."
-      respond_with(@list)
+      flash[:notice] = 'List was successfully created.'
+      respond_with(@list, :location => lists_url)
     else
       render action: "new"
     end
@@ -38,8 +38,8 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
 
     if @list.update_attributes(params[:list])
-      flash[:notice] = "List was successfully updated"
-      respond_with(@list)
+      flash[:notice] = 'List was successfully updated'
+      respond_with(@list, :location => lists_url)
     else
       render action: "edit"
     end
@@ -49,11 +49,11 @@ class ListsController < ApplicationController
   def destroy
     if @list = List.find(params[:id])
       @list.destroy
-      flash[:notice] = "List was destroyed"
-      redirect_to lists_url
+      # flash[:notice] = "List was destroyed"
+      redirect_to lists_url, alert: 'List was destroyed'
     else 
-      flash[:notice] = "List could not be destroyed"
-      redirect_to lists_url
+      # flash[:notice] = "List could not be destroyed"
+      redirect_to lists_url, alert: 'List could not be destroyed'
     end
   end
 end

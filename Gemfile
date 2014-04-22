@@ -7,6 +7,7 @@ gem 'sqlite3'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'guard-rails'

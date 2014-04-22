@@ -1,23 +1,27 @@
-<h1>Lists</h1>
-<p id="notice"><%= notice %></p>
-<table>
-  <tr>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @lists.each do |list| %>
-  <tr>
-    <td><%= list.title %></td>
-    <td><%= link_to 'Show', list %></td>
-    <td><%= link_to 'Edit', edit_list_path(list) %></td>
-    <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New List', new_list_path %>
+<div class="row col-md-6 col-md-offset-2 custyle">
+  <h1>Lists</h1>
+  <table class="table table-striped custab">
+    <thead>
+      <%= link_to '+ New List', new_list_path, class: 'btn btn-primary btn-xs pull-right' %>
+      <tr>
+        <th>Title</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <% @lists.each do |list| %>
+      <tr>
+        <td><%= list.title %></td>
+        <td><%= link_to 'Add To List', list_tasks_path(list), class: 'btn btn-success btn-xs' %>
+            <%= link_to 'Edit', edit_list_path(list), class: 'btn btn-info btn-xs' %>
+            <%= link_to 'Destroy', list, class: 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= render 'layouts/messages' %>
+  <% if @lists.empty? %>
+    <div class="alert alert-info">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Welcome!</strong> To get started, simply create a new list.
+    </div>
+  <% end %>
+</div>

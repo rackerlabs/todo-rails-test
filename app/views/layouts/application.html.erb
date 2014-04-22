@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TodoRailsTest</title>
+    <title>Sundip Patel | To Do List</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <header>
+      <nav class="navbar navbar-inverse navbar-xs" role="navigation">
+        <div class="navbar-header">
+          <div class="container">
+            <%= link_to 'SUNDIP PATEL To Do List', lists_path, class: 'navbar-brand' %>
+            <%= link_to '+ New List', new_list_path, class: 'navbar-brand' %>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
     <div class="container">
       <%= yield %>
     </div>
+
+    <footer>
+      <div class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+          <p class="navbar-text pull-right">© 2014 - Site Built By Sundip Patel</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
