@@ -1,4 +1,5 @@
 TodoRailsTest::Application.routes.draw do
+
   resources :lists do
     scope module: :lists do
       resources :tasks

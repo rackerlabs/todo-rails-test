@@ -1,22 +1,24 @@
 class ListsController < ApplicationController
+  respond_to :html, :json
+
   # GET /lists
   def index
-    @lists = List.all
+    respond_with(@lists = List.all)
   end
 
   # GET /lists/1
   def show
-    @list = List.find(params[:id])
+    respond_with(@list = List.find(params[:id]))
   end
 
   # GET /lists/new
   def new
-    @list = List.new
+    respond_with(@list = List.new)
   end
 
   # GET /lists/1/edit
   def edit
-    @list = List.find(params[:id])
+    respond_with(@list = List.find(params[:id]))
   end
 
   # POST /lists
@@ -24,7 +26,8 @@ class ListsController < ApplicationController
     @list = List.new(params[:list])
 
     if @list.save
-      redirect_to @list, notice: 'List was successfully created.'
+      flash[:notice] = 'List was successfully created.'
+      respond_with(@list, :location => lists_url)
     else
       render action: "new"
     end
@@ -35,7 +38,8 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
 
     if @list.update_attributes(params[:list])
-      redirect_to @list, notice: 'List was successfully updated.'
+      flash[:notice] = 'List was successfully updated'
+      respond_with(@list, :location => lists_url)
     else
       render action: "edit"
     end
@@ -43,9 +47,13 @@ class ListsController < ApplicationController
 
   # DELETE /lists/1
   def destroy
-    @list = List.find(params[:id])
-    @list.destroy
-
-    redirect_to lists_url
+    if @list = List.find(params[:id])
+      @list.destroy
+      # flash[:notice] = "List was destroyed"
+      redirect_to lists_url, alert: 'List was destroyed'
+    else 
+      # flash[:notice] = "List could not be destroyed"
+      redirect_to lists_url, alert: 'List could not be destroyed'
+    end
   end
 end

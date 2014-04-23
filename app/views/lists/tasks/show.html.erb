@@ -1,5 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<div class="row">
+	  	<div class="col-md-6 col-md-offset-3">
+		    <div class="well well-sm">
+			<p id="notice"><%= notice %></p>
 
+			<%= link_to 'Edit', edit_list_task_path(@list, @task) %> |
+			<%= link_to 'Back', list_tasks_path(@list) %>
 
-<%= link_to 'Edit', edit_list_task_path(@list, @task) %> |
-<%= link_to 'Back', list_tasks_path(@list) %>
+			</div>
+	  	</div>
+	</div>
+</div>

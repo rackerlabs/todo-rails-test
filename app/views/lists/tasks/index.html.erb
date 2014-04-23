@@ -1,25 +1,29 @@
-<h1>List Tasks</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Complete?</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-  <% @tasks.each do |task| %>
+<div class="row col-md-6 col-md-offset-2 custyle">
+  <h1>List Tasks</h1>
+  <table class="table table-striped custab">
+    <thead>
+      <%= link_to '+ New Task', new_list_task_path(@list), class: 'btn btn-primary btn-xs pull-right' %>
+      <tr>
+          <th>Task</th>
+          <th><%= sortable "due_date", "Due Date" %></th>
+          <th>Complete?</th>
+          <th class="text-center">Action</th>
+      </tr>
+    </thead>
+    <% @tasks.each do |task| %>
     <tr>
       <td><%= task.name %></td>
-      <td><%= task.complete %></td>
-      <td><%= link_to 'Show', list_task_path(@list, task) %></td>
-      <td><%= link_to 'Edit', edit_list_task_path(@list, task) %></td>
-      <td><%= link_to 'Destroy', list_task_path(@list, task), method: :delete, confirm: 'Are you sure?' %></td>
+      <td><%= task.due_date.try(:strftime, '%B %d, %Y') %></td>
+      <td><% if task.complete == true %>
+            <span class="glyphicon glyphicon-ok"></span>
+          <% end %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_list_task_path(@list, task), class: 'btn btn-info btn-xs' %>
+        <%= link_to 'Delete', list_task_path(@list, task), class: 'btn btn-danger btn-xs', method: :delete, confirm: 'Are you sure?' %>
+      </td>
     </tr>
-  <% end %>
-</table>
-
-<br />
-
-<%= link_to 'Back', lists_path %> |
-<%= link_to 'New Task', new_list_task_path(@list) %>
+    <% end %>
+  </table>
+  <%= render 'layouts/messages' %>
+</div>
