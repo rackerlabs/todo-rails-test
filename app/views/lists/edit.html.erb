@@ -1,6 +1,50 @@
-<h1>Editing list</h1>
+<div class="container">
 
-<%= render 'form' %>
+	<div class="row list_titles"><h3><%= link_to 'Back to Lists', lists_path %></h3></div>
+	<div class="row list_titles" id="list_title"><h1><%= @list.title %></h1></div>
 
-<%= link_to 'Show', @list %> |
-<%= link_to 'Back', lists_path %>
+	<div class="row">
+		<%= form_for(@list) do |f| %>
+		  <% if @list.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
+		      <ul>
+		        <% @list.errors.full_messages.each do |msg| %>
+		          <li><%= msg %></li>
+		        <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+
+			<div class="row content">
+				<div class="col-md-4 task_name_label">Task Name</div>
+				<div class="col-md-8 task_date_label">Due Date </div>
+			</div>
+		  <div class="row prepend"><!-- <button type="button" class="btn btn-default add_and_update_buttons click glyphicon glyphicon-plus"></button> --></div>
+
+
+			<div class="item_form_list">
+				<div class="row content label_headers">
+					<div class="col-md-1">Done?</div>
+					<div class="col-md-7">Task Name</div>
+					<div class="col-md-4 click" id="sort_by_date">Due Date</div>
+				</div>
+		    <%= f.fields_for :tasks do |t| %>
+			    <div class="row content item_field">
+			    	<div class="col-md-1 check_box click"><%= t.check_box :complete %></div>
+			      <div class="col-md-7 name_field"><%= t.text_field :name %></div>
+			      <div class="col-md-4 date_field"><%= t.text_field :due_date, placeholder: "YYYY-MM-DD" %></div>
+			    </div>
+		    <% end %>
+			</div>
+		  <div class="row">
+		    <%= f.submit :id => 'submit_button' %>
+		  </div>
+		  
+		<% end %>
+
+	
+	</div><!-- end row -->
+
+</div>
+<!-- end container -->

@@ -11,5 +11,92 @@
  *= require bootstrap.min
  *= require bootstrap-theme.min
  *= require_self
+ *= require bootstrap_and_overrides
  */
 
+#add_new_item_field .name_field {
+	margin-left:27px;
+}
+
+.task_date_label {
+	width:200px;
+	margin-left:12px;
+}
+
+.add_task_label {
+	margin-left:-25px;
+}
+
+.name_field input {
+	width:300px;
+}
+
+#create_new_list_button {
+	margin-bottom:20px;
+}
+
+.add_and_update_buttons {
+	margin-left:12px;
+}
+
+.prepend {
+	margin-bottom:20px;
+}
+
+.item_form_list input {
+	border:none!important;
+	box-shadow:none!important;
+	-webkit-box-shadow:none!important;
+	border-radius:5px;
+	transition:none!important;
+	-webkit-transition:none!important;
+	-moz-transition:none!important;
+}
+
+.list_index {
+	margin-top:5px;
+	margin-bottom:5px;
+	border-top-style:dotted;
+	border-top-color:gray;
+	padding-top:10px;
+}
+
+.bottom_border {
+	border-top-style:dotted;
+	border-top-color:gray;
+}
+
+.list_of_lists {
+	width:600px;
+	font-size:24px;
+}
+
+.list_titles {
+	margin-left:-50px!important;
+}
+
+#list_title {
+	margin-bottom:20px;
+}
+
+.list_index a {
+	margin-left:-15px!important;
+}
+
+.content {
+	font-size:20px;
+}
+
+.label_headers {
+	margin-bottom:10px;
+}
+
+#sort_by_date {
+	color:#0076C2;
+}
+
+#sort_by_date:hover {
+	color:#483D8B;
+	text-decoration: underline;
+	cursor:pointer;
+}
