@@ -1,37 +1,58 @@
-# Rackspace Software Developer Ruby on Rails Take Home Test
+# To-Do List
 
-## Instructions
-1. [Fork](https://help.github.com/articles/fork-a-repo) and clone this repository
-2. Complete "Requirements"
+Ruby on Rails application to manage tasks.
 
+## Functionality
 
-## Requirements
-Update the existing code to provide the following functionality:
+- As a user, I can add a task to the list.
+- As a user, I can see all the tasks on the list in an overview.
+- As a user, I can drill into a task to see more information about the task.
+- As a user, I can delete a task.
+- As a user, I can mark a task as completed.
+- As a user, when I see all the tasks in the overview, if today's date is past the task's deadline, highlight it.
 
-1. Add ability to set a due date on a Task
-2. Add ability to sort Tasks by due date
-3. Update the ListsController so that every action responds to JSON
-4. Apply Bootstrap [CSS](http://getbootstrap.com/css/) and [components](http://getbootstrap.com/components/) to make the UI more appealing
+![Todo list](public/img/todo-list.png)
+![Todo list create new task](public/img/todo-list-create.png)
+![Todo list edit task](public/img/todo-list-edit.png)
 
-These updates should be **_all your own work_**, and it does not need to be complicated.  Fewer tested features are preferred over many buggy features.
+## Running the app
 
-**Good luck!**
+Clone this repo:
 
-## About the Code
-This application was built with the following specifications:
+```
+$ git clone https://github.com/groundberry/todo-list
+```
 
-* Ruby on Rails ([v3.2.17](http://guides.rubyonrails.org/v3.2.17/) with asset pipeline enabled)
-* Ruby [2.0.0](http://ruby-doc.org/core-2.0.0/)
-* sqlite3 database
-* [RSpec](http://rspec.info/) 2.14 (with [Guard](http://guardgem.org/) support)
-* Lists can be created, viewed, updated, and destroyed
-* Tasks can be created, viewed, updated, and destroyed (in context of a List)
-* [Bootstrap](http://getbootstrap.com/) CSS and components are available for styling
+Install all dependancies:
 
+```
+$ bundle install
+```
 
-## Helpful Resources
-* [Rails 3.2.17 Guide](http://guides.rubyonrails.org/v3.2.17/)
-* [Ruby 2.0.0 Docs](http://ruby-doc.org/core-2.0.0/)
-* [Ruby 2.0.0 Std-lib Docs](http://ruby-doc.org/stdlib-2.0.0/)
-* [Bootstrap CSS](http://getbootstrap.com/css/)
-* [Bootstrap Components](http://getbootstrap.com/components/)
+Create the database and run migrations:
+
+```
+$ rake db:create db:migrate
+```
+
+Start the server:
+
+```
+$ rails server
+```
+
+And open the app in your browser at <http://localhost:3000/>.
+
+## Testing the app
+
+Run the tests:
+
+```
+$ rake
+```
+
+![Unit tests](public/img/unit-tests.png)
+
+## Useful documentation
+
+- [Ruby on Rails guides](http://guides.rubyonrails.org/)
