@@ -1,5 +1,5 @@
 class Lists::TasksController < ApplicationController
-  before_filter do
+  before_action do
     @list = List.find(params[:list_id])
   end
 
@@ -25,7 +25,7 @@ class Lists::TasksController < ApplicationController
 
   # POST /lists/tasks
   def create
-    @task = Task.new(params[:task])
+    @task = Task.new(task_params)
     @task.list = @list
 
     if @task.save
@@ -52,5 +52,9 @@ class Lists::TasksController < ApplicationController
     @task.destroy
 
     redirect_to list_tasks_path(@list)
+  end
+
+  def task_params
+    params.require(:task).permit(:name, :complete)
   end
 end
