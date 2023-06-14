@@ -21,7 +21,7 @@ class ListsController < ApplicationController
 
   # POST /lists
   def create
-    @list = List.new(params[:list])
+    @list = List.new(list_params)
 
     if @list.save
       redirect_to @list, notice: 'List was successfully created.'
@@ -47,5 +47,9 @@ class ListsController < ApplicationController
     @list.destroy
 
     redirect_to lists_url
+  end
+  private
+  def list_params
+    params.require(:list).permit(:title)
   end
 end
