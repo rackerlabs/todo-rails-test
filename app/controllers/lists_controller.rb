@@ -42,11 +42,16 @@ class ListsController < ApplicationController
   end
 
   # DELETE /lists/1
+
+  def delete
+    @list = List.find(params[:id])
+  end
+
   def destroy
     @list = List.find(params[:id])
     @list.destroy
 
-    redirect_to lists_url
+    redirect_to lists_path
   end
   private
   def list_params
