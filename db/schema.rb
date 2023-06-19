@@ -24,8 +24,10 @@ ActiveRecord::Schema[7.0].define(version: 2014_03_18_155532) do
     t.string "name"
     t.boolean "complete"
     t.integer "list_id"
+    t.date "due_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["list_id"], name: "index_tasks_on_list_id"
   end
+
 end

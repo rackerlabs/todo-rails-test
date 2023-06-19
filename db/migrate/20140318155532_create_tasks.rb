@@ -4,7 +4,7 @@ class CreateTasks < ActiveRecord::Migration[7.0]
       t.string :name
       t.boolean :complete
       t.integer "list_id"
-      t.datetime :due_date
+      t.date :due_date
 
       t.timestamps
     end
