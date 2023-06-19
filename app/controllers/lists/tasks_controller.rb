@@ -5,7 +5,7 @@ class Lists::TasksController < ApplicationController
 
   # GET /lists/tasks
   def index
-    @tasks = @list.tasks.all
+    @tasks = @list.tasks.all.order(due_date: :asc)
   end
 
   # GET /lists/tasks/1
