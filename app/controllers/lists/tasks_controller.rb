@@ -38,8 +38,7 @@ class Lists::TasksController < ApplicationController
   # PUT /lists/tasks/1
   def update
     @task = Task.find(params[:id])
-
-    if @task.update_attributes(params[:task])
+    if @task.update_attribute(task_params)
       redirect_to list_task_path(@list, @task), notice: 'Task was successfully updated.'
     else
       render action: "edit"
@@ -55,6 +54,6 @@ class Lists::TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:name, :complete)
+    params.require(:task).permit(:name, :complete, :due_date)
   end
 end
