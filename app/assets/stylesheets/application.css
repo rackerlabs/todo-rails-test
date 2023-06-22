@@ -13,11 +13,22 @@
  *= require_self
 
  */
+ 
+ body {
+  /* background-color: #40128B; */
+  background: radial-gradient(ellipse at center, #9336B4, #40128B);
+  min-height: 100vh;
+}
 
 table {
   border-collapse: collapse;
   font-family: cursive;
   font-size: 1.2rem;
+}
+
+.header-text {
+  font-size: 38px;
+  font-weight: 700;
 }
 
 .t-item {
@@ -30,7 +41,7 @@ table {
   width: 80vw;
   color: #fff;
   font-size: 1.2rem;
-  background-color: rgba(248, 213, 213, 0.73);
   border-radius: 10px;
   padding: 1rem;
+  margin: 1rem auto;
 }
