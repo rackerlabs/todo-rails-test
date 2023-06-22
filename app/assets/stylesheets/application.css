@@ -8,9 +8,29 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require bootstrap
  *= require bootstrap.min
  *= require bootstrap-theme.min
  *= require_self
+
  */
 
+table {
+  border-collapse: collapse;
+  font-family: cursive;
+  font-size: 1.2rem;
+}
+
+.t-item {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #080708;
+}
+
+.recipe {
+  width: 80vw;
+  color: #fff;
+  font-size: 1.2rem;
+  background-color: rgba(248, 213, 213, 0.73);
+  border-radius: 10px;
+  padding: 1rem;
+}
