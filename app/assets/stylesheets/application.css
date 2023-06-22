@@ -13,17 +13,17 @@
  *= require_self
 
  */
- 
- body {
+
+body {
   /* background-color: #40128B; */
-  background: radial-gradient(ellipse at center, #9336B4, #40128B);
+  background: radial-gradient(ellipse at center, #9336b4, #40128b);
   min-height: 100vh;
 }
 
 table {
   border-collapse: collapse;
   font-family: cursive;
-  font-size: 1.2rem;
+  font-size: 2rem;
 }
 
 .header-text {
@@ -32,15 +32,17 @@ table {
 }
 
 .t-item {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 500;
-  color: #080708;
+}
+
+.btn-info {
+  margin-bottom: 2rem;
 }
 
 .recipe {
   width: 80vw;
   color: #fff;
-  font-size: 1.2rem;
   border-radius: 10px;
   padding: 1rem;
   margin: 1rem auto;

@@ -1,21 +1,20 @@
 <div class="recipe">
   <h1 class="header-text text-center">Lists</h1>
+  <%= link_to 'New List', new_list_path, class: "btn btn-info" %>
   <table class="table border-primary">
     <tr>
       <th scope="row">Title</th>
-      <th scope="row">Show</th>
-      <th scope="row">Edit</th>
-      <th scope="row">Delete</th>
+      <th scope="row"></th>
+      <th scope="row"></th>
+      <th scope="row"></th>
     </tr>
     <% @lists.each do |list| %>
       <tr>
         <td class="t-item"><%= list.title %></td>
-        <td class="t-item"><%= link_to 'Show', list %></td>
-        <td class="t-item"><%= link_to 'Edit', edit_list_path(list) %></td>
-        <td class="t-item"><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="t-item"><%= link_to 'Show', list, class: "btn btn-primary" %></td>
+        <td class="t-item"><%= link_to 'Edit', edit_list_path(list), class: "btn btn-primary" %></td>
+        <td class="t-item"><%= link_to 'Destroy', list, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </table>
-  <br />
-  <%= link_to 'New List', new_list_path %>
 </div>
