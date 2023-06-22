@@ -64,3 +64,18 @@ table {
   display: flex;
   justify-content: space-between;
 }
+
+.bookForm {
+  padding: 2rem;
+  border-radius: 5px;
+  width: 45vw;
+  margin: 0 auto;
+}
+
+.edit-title, .new-title {
+  color: #fff;
+}
+
+label {
+  color: #fff;
+}

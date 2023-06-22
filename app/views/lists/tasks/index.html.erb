@@ -1,23 +1,23 @@
-<h1>List Tasks</h1>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Complete?</th>
-    <th>Due Date</th>
-    <th></th>
-    <th></th>
-  </tr>
-  <% @tasks.each do |task| %>
+<div class="book">
+  <%= link_to 'Back', lists_path, class: "btn btn-info" %>
+  <%= link_to 'New Task', new_list_task_path(@list), class: "btn btn-info" %>
+  <table class="table border-primary">
     <tr>
-      <td><%= task.name %></td>
-      <td><%= task.complete %></td>
-      <td><%= task.due_date %></td>
-      <td><%= link_to 'Show', list_task_path(@list, task) %></td>
-      <td><%= link_to 'Edit', edit_list_task_path(@list, task) %></td>
-      <td><%= link_to 'Destroy', list_task_path(@list, task), method: :delete, confirm: 'Are you sure?' %></td>
+      <th scope="row">Name</th>
+      <th scope="row">Complete?</th>
+      <th scope="row">Due Date</th>
+      <th scope="row"></th>
+      <th scope="row"></th>
     </tr>
-  <% end %>
-</table>
-<br />
-<%= link_to 'Back', lists_path %> |
-<%= link_to 'New Task', new_list_task_path(@list) %>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td class="t-item"><%= task.name %></td>
+        <td class="t-item"><%= task.complete %></td>
+        <td class="t-item"><%= task.due_date %></td>
+        <td class="t-item"><%= link_to 'Show', list_task_path(@list, task), class: "btn btn-primary" %></td>
+        <td class="t-item"><%= link_to 'Edit', edit_list_task_path(@list, task), class: "btn btn-primary" %></td>
+        <td class="t-item"><%= link_to 'Destroy', list_task_path(@list, task), class: "btn btn-danger", method: :delete, confirm: 'Are you sure?' %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
