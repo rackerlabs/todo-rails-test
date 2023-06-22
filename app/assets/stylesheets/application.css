@@ -36,14 +36,31 @@ table {
   font-weight: 500;
 }
 
+.title {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
 .btn-info {
   margin-bottom: 2rem;
 }
 
-.recipe {
+.book {
   width: 55vw;
   color: #fff;
   border-radius: 10px;
   padding: 1rem;
   margin: 1rem auto;
+}
+.book-title {
+  width: 25vw;
+  color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem auto;
+}
+
+.book-buttons {
+  display: flex;
+  justify-content: space-between;
 }

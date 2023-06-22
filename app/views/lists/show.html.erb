@@ -1,11 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @list.title %>
-</p>
-
-<%= link_to 'Tasks', list_tasks_path(@list) %> |
-
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+<div class="book-title">
+  <p id="notice"><%= notice %></p>
+  <p class="title"><b>Title: </b><%= @list.title %></p>
+  <div class="book-buttons">
+    <%= link_to 'Tasks', list_tasks_path(@list), class: "btn btn-primary" %>
+    <%= link_to 'Edit', edit_list_path(@list), class: "btn btn-primary"%>
+    <%= link_to 'Back', lists_path, class: "btn btn-primary" %>
+  </div>
+</div>
