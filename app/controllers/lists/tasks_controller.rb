@@ -38,7 +38,7 @@ class Lists::TasksController < ApplicationController
   # PUT /lists/tasks/1
   def update
     @task = Task.find(params[:id])
-    if @task.update_attribute(task_params)
+    if @task.update(task_params)
       redirect_to list_task_path(@list, @task), notice: 'Task was successfully updated.'
     else
       render action: "edit"

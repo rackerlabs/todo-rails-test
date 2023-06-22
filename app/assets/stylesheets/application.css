@@ -72,10 +72,14 @@ table {
   margin: 0 auto;
 }
 
-.edit-title, .new-title {
+.edit-title, .new-title, .list-edit {
   color: #fff;
 }
 
 label {
   color: #fff;
+}
+
+.btn-primary, .btn-danger {
+  margin-top: 1rem; 
 }

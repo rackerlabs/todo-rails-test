@@ -33,8 +33,7 @@ class ListsController < ApplicationController
   # PUT /lists/1
   def update
     @list = List.find(params[:id])
-
-    if @list.update_attributes(params[:list])
+    if @list.update(list_params)
       redirect_to @list, notice: 'List was successfully updated.'
     else
       render action: "edit"
