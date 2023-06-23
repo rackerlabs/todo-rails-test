@@ -52,6 +52,7 @@ table {
   padding: 1rem;
   margin: 1rem auto;
 }
+
 .book-title {
   width: 25vw;
   color: #fff;
@@ -72,7 +73,9 @@ table {
   margin: 0 auto;
 }
 
-.edit-title, .new-title, .list-edit {
+.edit-title,
+.new-title,
+.list-edit {
   color: #fff;
 }
 
@@ -80,6 +83,7 @@ label {
   color: #fff;
 }
 
-.btn-primary, .btn-danger {
-  margin-top: 1rem; 
+.btn-primary,
+.btn-danger {
+  margin-top: 1rem;
 }
