@@ -1,2 +1,23 @@
 <h1 class="text-center edit-title">Editing list</h1>
-<%= render 'form' %>
+<div class="bookForm">
+  <%= form_for(@list) do |f| %>
+    <%= link_to 'Back', lists_path, class: "btn btn-info" %>
+    <% if @list.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
+        <ul>
+          <% @list.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title, required: true, class: "form-control" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Update", class: "btn btn-primary mt-4" %>
+    </div>
+  <% end %>
+</div>
