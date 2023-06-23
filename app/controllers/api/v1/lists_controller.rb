@@ -9,7 +9,7 @@ class Api::V1::ListsController < ApplicationController
     render json: @list
   end
 
-  def create 
+  def create
     @list = List.new(list_params)
 
     if @list.save
@@ -23,4 +23,3 @@ class Api::V1::ListsController < ApplicationController
     params.require(:list).permit(:title)
   end
 end
-  

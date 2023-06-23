@@ -31,7 +31,7 @@ class Lists::TasksController < ApplicationController
     if @task.save
       redirect_to list_task_path(@list, @task), notice: 'Task was successfully created.'
     else
-      render action: "new"
+      render action: 'new'
     end
   end
 
@@ -41,7 +41,7 @@ class Lists::TasksController < ApplicationController
     if @task.update(task_params)
       redirect_to list_task_path(@list, @task), notice: 'Task was successfully updated.'
     else
-      render action: "edit"
+      render action: 'edit'
     end
   end
 

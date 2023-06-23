@@ -26,7 +26,7 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to @list, notice: 'List was successfully created.'
     else
-      render action: "new"
+      render action: 'new'
     end
   end
 
@@ -36,7 +36,7 @@ class ListsController < ApplicationController
     if @list.update(list_params)
       redirect_to @list, notice: 'List was successfully updated.'
     else
-      render action: "edit"
+      render action: 'edit'
     end
   end
 
@@ -52,7 +52,9 @@ class ListsController < ApplicationController
 
     redirect_to lists_path
   end
+
   private
+
   def list_params
     params.require(:list).permit(:title)
   end
