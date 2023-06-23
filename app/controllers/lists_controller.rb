@@ -21,31 +21,41 @@ class ListsController < ApplicationController
 
   # POST /lists
   def create
-    @list = List.new(params[:list])
+    @list = List.new(list_params)
 
     if @list.save
       redirect_to @list, notice: 'List was successfully created.'
     else
-      render action: "new"
+      render action: 'new'
     end
   end
 
   # PUT /lists/1
   def update
     @list = List.find(params[:id])
-
-    if @list.update_attributes(params[:list])
+    if @list.update(list_params)
       redirect_to @list, notice: 'List was successfully updated.'
     else
-      render action: "edit"
+      render action: 'edit'
     end
   end
 
   # DELETE /lists/1
+
+  def delete
+    @list = List.find(params[:id])
+  end
+
   def destroy
     @list = List.find(params[:id])
     @list.destroy
 
-    redirect_to lists_url
+    redirect_to lists_path
+  end
+
+  private
+
+  def list_params
+    params.require(:list).permit(:title)
   end
 end

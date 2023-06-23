@@ -1,12 +1,13 @@
-class CreateTasks < ActiveRecord::Migration
+class CreateTasks < ActiveRecord::Migration[7.0]
   def change
     create_table :tasks do |t|
       t.string :name
       t.boolean :complete
-      t.belongs_to :list
+      t.integer "list_id"
+      t.date :due_date
 
       t.timestamps
     end
-    add_index :tasks, :list_id
+    add_index("tasks", "list_id")
   end
 end

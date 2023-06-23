@@ -1,5 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-
-<%= link_to 'Edit', edit_list_task_path(@list, @task) %> |
-<%= link_to 'Back', list_tasks_path(@list) %>
+<div class="book-title">
+  <p  id="notice"><%= notice %></p>
+  <p class="title"><b>Name: </b><%= @task.name %></p>
+  <p class="title"><b>Due Date: </b><%= @task.due_date %></p>
+  <div class="book-buttons">
+    <%=  link_to 'Edit', edit_list_task_path(@list, @task), class: "btn btn-primary" %>
+    <%= link_to 'Back', list_tasks_path(@list), class: "btn btn-primary" %>
+  </div>
+</div>

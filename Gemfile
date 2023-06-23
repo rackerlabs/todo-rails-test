@@ -1,11 +1,34 @@
 source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'rails', '3.2.17'
-gem 'sqlite3'
+ruby '3.2.2'
+
+# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
+
+gem 'pg', '~> 1.4.5'
+
+# Use the Puma web server [https://github.com/puma/puma]
+gem 'puma', '~> 5.0'
+
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', require: false
+
+# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem 'sprockets-rails'
+
 gem 'jquery-rails'
 
-group :test, :development do
-  gem 'rspec-rails'
+gem 'bootstrap', '~> 5.0'
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+
+gem 'active_model_serializers', '~> 0.10.13'
+
+group :development, :test do
   gem 'guard-rails'
   gem 'guard-rspec'
+  gem 'rspec-rails'
 end
